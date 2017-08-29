@@ -13,7 +13,13 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function callBinding(arr,cb,id){
+  for(var i=0; i<arr.length;i++){
+    if(id===arr[i][id]){
+    return cb.call(arr[i][id],"Trogdor")
+    }
+  }
+}
 
 
 // *************
@@ -64,3 +70,8 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+function emailList(){
+  return new promise((resolve,reject)=>{
+    
+  })
+}

@@ -74,6 +74,7 @@ function large() {
   return 'My name is ' + this.name + ' and I am very heavy!'
 }
 // CODE HERE...
+var boundToElephant= large.bind(elephant);
 
 
 
@@ -88,6 +89,9 @@ function large() {
 // and return the bound function.
 
 // CODE HERE...
+function deathStar(cap,crew){
+  return cap.bind(crew)
+}
 
 
 
@@ -103,7 +107,12 @@ function large() {
 // The closure function will return the combined value of assets and liabilities.
 
 // CODE HERE...
+function accountingOffice(ass){
+  return function(liab){
+    return ass+liab
 
+  }
+}
 
 
 // *************
@@ -128,7 +137,16 @@ function large() {
 // };
 
 // CODE HERE...
-
+// function forgetter(name){
+//   return function rememberall(item){
+//     var obj={
+//       name:name,
+//       remember:item
+//     }return obj
+//
+//   }
+//
+// }
 
 
 // *************
@@ -156,3 +174,16 @@ function large() {
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+function frodo(strhunger,strdanger){
+  hunger=strhunger;
+  danger=strdanger;
+  return {
+      dinnerOverFire:function dinnerOverFire(){
+        this.hunger-=25;
+        this.danger+=40;
+    }, hidingInBush: function hidingInBush(){
+        this.hunger+=35;
+        this.danger-=20;
+      }
+    }
+  }
